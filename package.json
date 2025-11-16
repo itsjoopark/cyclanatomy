@@ -1,0 +1,24 @@
+{
+  "name": "cyclanatomy",
+  "version": "1.0.0",
+  "description": "Interactive 3D road bike anatomy viewer with Three.js",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python3 -m http.server 8000",
+    "start": "python3 -m http.server 8000",
+    "preview": "open preview-2d.html"
+  },
+  "keywords": [
+    "threejs",
+    "3d",
+    "bike",
+    "anatomy",
+    "interactive",
+    "webgl"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {}
+}
+

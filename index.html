@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclanatomy - Interactive 3D Road Bike</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Top Navigation Bar -->
+    <header class="top-nav">
+        <div class="header-content">
+            <h1>Cyclanatomy</h1>
+        </div>
+    </header>
+
+    <!-- Main 3D Canvas Container -->
+    <div id="canvas-container">
+        <canvas id="three-canvas"></canvas>
+        
+        <!-- Bike Size Calculator -->
+        <div id="bike-size-calculator" class="bike-size-calculator">
+            <div class="calculator-content">
+                <div class="calculator-header-section">
+                    <h2 class="calculator-title">1. Bike Size Calculator</h2>
+                    <div class="unit-toggle">
+                        <button class="unit-btn active" data-unit="inches">Inches</button>
+                        <button class="unit-btn" data-unit="cm">Centimeters</button>
+                    </div>
+                </div>
+                
+                <div class="calculator-inputs-section">
+                    <h3 class="calculator-subtitle">2. Input Body Measurements</h3>
+                    
+                    <div class="input-group">
+                        <label for="foot-length">Foot Length</label>
+                        <input type="number" id="foot-length" placeholder="Type here..." step="0.1" min="0">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="inseam-length">Inseam Length</label>
+                        <input type="number" id="inseam-length" placeholder="Type here..." step="0.1" min="0">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="arm-length">Arm Length</label>
+                        <input type="number" id="arm-length" placeholder="Type here..." step="0.1" min="0">
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="lower-leg-length">Lower Leg Length</label>
+                        <input type="number" id="lower-leg-length" placeholder="Type here..." step="0.1" min="0">
+                    </div>
+                </div>
+                
+                <button class="calculate-btn">Calculate</button>
+                
+                <div class="result-display" id="bike-size-result"></div>
+            </div>
+        </div>
+        
+        <!-- Descriptive Side Panel -->
+        <div id="description-side-panel" class="description-side-panel">
+            <div class="panel-image-container">
+                <img src="assets/8c89efe7cd63396f9ef63fff39497ad473a2f61e.png" alt="Handlebar" class="panel-image">
+            </div>
+            <div class="panel-content">
+                <h3 class="panel-header">Handlebar</h3>
+                <p class="panel-description">Controls steering and provides multiple hand positions for comfort during long rides. Drop bar design for aerodynamic riding positions.</p>
+            </div>
+        </div>
+        
+        <!-- Interactive Markers Overlay - HIDDEN -->
+        <!-- 
+        <div id="markers-overlay">
+            <div class="marker marker-1" data-part="saddle">
+                <span>1</span>
+            </div>
+            <div class="marker marker-2" data-part="frame">
+                <span>2</span>
+            </div>
+            <div class="marker marker-3" data-part="handlebar">
+                <span>3</span>
+            </div>
+        </div>
+        -->
+
+        <!-- Bike Label -->
+        <div class="bike-label">
+            Canyon Road Bike
+        </div>
+
+        <!-- Button Control Panel -->
+        <div id="button-control-panel" class="button-control-panel">
+            <button class="control-button" data-view="1">
+                <span>1</span>
+            </button>
+            <button class="control-button" data-view="2">
+                <span>2</span>
+            </button>
+            <button class="control-button" data-view="3">
+                <span>3</span>
+            </button>
+            <button class="control-button" data-view="4">
+                <span>4</span>
+            </button>
+            <button class="control-button" data-view="5">
+                <span>5</span>
+            </button>
+            <button class="control-button" data-view="6">
+                <span>6</span>
+            </button>
+            <button class="control-button" data-view="7">
+                <span>7</span>
+            </button>
+            <button class="control-button" data-view="8">
+                <span>8</span>
+            </button>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading-indicator">
+            <div class="spinner"></div>
+            <p>Loading 3D Model...</p>
+        </div>
+
+        <!-- Instructions -->
+        <div class="controls-info">
+            <p>🖱️ Drag to rotate • Scroll to zoom</p>
+        </div>
+    </div>
+
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- OrbitControls for mouse interaction -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <!-- GLTFLoader for 3D models -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    
+    <!-- Main Application Script -->
+    <script src="app.js"></script>
+</body>
+</html>
+

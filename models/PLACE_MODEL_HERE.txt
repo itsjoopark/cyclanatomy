@@ -1,0 +1,43 @@
+📦 3D MODEL INSTRUCTIONS
+========================
+
+Place your road bike 3D model files in this directory.
+
+EXPECTED FILE:
+- roadbike.glb (recommended - single file with embedded textures)
+  OR
+- roadbike.gltf + texture files
+
+SUPPORTED FORMATS:
+- .glb (Binary GLTF - preferred)
+- .gltf (JSON GLTF with separate textures)
+
+FILE NAMING:
+The app.js file is configured to look for: "roadbike.glb"
+
+If your model has a different name, either:
+1. Rename your model to "roadbike.glb"
+2. Update the CONFIG.modelPath in app.js
+
+MODEL FROM YOUR REFERENCE:
+You mentioned: "roadbike__bicycle_canyon_endurace_cf"
+
+Please place the Canyon Endurace CF bike model files here.
+
+TEXTURE FILES:
+If using .gltf format, place all associated texture files in this same directory:
+- Base color/diffuse maps
+- Normal maps
+- Metallic/roughness maps
+- Any other material textures
+
+The GLTFLoader will automatically find textures if they're in the same directory.
+
+TESTING:
+After adding the model, run a local server from the project root:
+  python3 -m http.server 8000
+
+Then open: http://localhost:8000
+
+The model should load and be visible in the center of the scene with mouse controls enabled.
+
